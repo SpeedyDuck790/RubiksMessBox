@@ -9,18 +9,43 @@ class Rubic {
         String[][][] cube = new String[6][3][3];
         System.out.println("Cube created");
 
+        moves move = new moves();
         setting set = new setting();
         output out = new output();
-
-        cube = set.CubesetTest(cube);
-
-        out.TestOutput(cube);
 
         System.out.println("----------------Cube--------------");
 
         cube = set.CubesetDefault(cube);
 
-        out.TestOutput(cube);
+        out.ShowCube(cube);
+
+        System.out.println("----------------Cube R turned--------------");
+
+        move.R(cube, 0);
+
+        out.ShowCube(cube);
+        System.out.println("----------------Cube R turned--------------");
+
+        move.R(cube, 0);
+
+        out.ShowCube(cube);
+        System.out.println("----------------Cube R turned--------------");
+
+        move.R(cube, 0);
+
+        out.ShowCube(cube);
+        System.out.println("----------------back to normal--------------");
+
+        move.R(cube, 0);
+
+        out.ShowCube(cube);
+
+        System.out.println("----------------Cube L turned--------------");
+
+        move.L(cube, 0);
+        move.R(cube, 0);
+
+        out.ShowCube(cube);
 
     }
 }

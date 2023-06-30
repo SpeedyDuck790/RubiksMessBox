@@ -20,4 +20,38 @@ public class output {
 
     }
 
+    public void ShowCube(String[][][] cube) {
+
+        for (side = 0; side < 6; side++) {
+            for (L = 0; L < 3; L++) {
+                for (H = 0; H < 3; H++) {
+                    System.out.print(cube[side][L][H]);
+                }
+                System.out.println("");
+            }
+            // switch (side) {
+            // case 0:
+            // System.out.println("Front");
+            // break;
+            // case 1:
+            // System.out.println("Back");
+            // break;
+            // case 2:
+            // System.out.println("left");
+            // break;
+            // case 3:
+            // System.out.println("right");
+            // break;
+            // case 4:
+            // System.out.println("up");
+            // break;
+            // case 5:
+            // System.out.println("down");
+            // break;
+            // }
+            System.out.println("---");
+        }
+
+    }
+
 }
