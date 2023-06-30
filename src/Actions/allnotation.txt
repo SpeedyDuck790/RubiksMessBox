@@ -1,0 +1,10 @@
+//Side moves
+U,D,R,L,(F,B) // R is up L is down//// U is left D is right
+Ur,Dr,Rr,Lr,(Fr,Br)
+
+//Slice moves
+x y (z) // middle rotation x is up and y is left
+xr yr (zr)
+
+
+(*) = not needed due to perspective
