@@ -3,7 +3,7 @@ Goal: Rubric cube Sim with Gui and notation reader
 CS break project-
 __________________________________
 ideas:
-- String[3][3] array for tile location on the cube
+- String 3d array for tile location on the cube
 - Swing GUI to Make a Controller.java and a display.java
 - Use methods for cube movement SwapCube.L1 or SwapCube.R1
 - methods to flip the cube view

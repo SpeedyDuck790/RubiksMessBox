@@ -1,7 +1,9 @@
 package Actions;
 
 public class moves {
-    public void U() {
+    public String[][][] U(String[][][] cube) {
+
+        return cube;
 
     }
 

@@ -12,6 +12,12 @@ class Rubic {
         setting set = new setting();
         output out = new output();
 
+        cube = set.CubesetTest(cube);
+
+        out.TestOutput(cube);
+
+        System.out.println("----------------Cube--------------");
+
         cube = set.CubesetDefault(cube);
 
         out.TestOutput(cube);
