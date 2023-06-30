@@ -2,16 +2,24 @@
 Goal: Rubric cube Sim with Gui and notation reader
 CS break project-
 __________________________________
-ideas:
-- String 3d array for tile location on the cube
-- Swing GUI to Make a Controller.java and a display.java
-- Use methods for cube movement SwapCube.L1 or SwapCube.R1
-- methods to flip the cube view
-- method to reset the cube to solved or unsolved
-- notation read off swap cube from txt input compiler
-- use 2d game ideas to implement display
-- already understand awt/swing input and outputs
-__________________________________
+src
+|____Rubik.java
+|____src/Display
+|              |____moves.java
+|              |____output.java
+|              |____setting.java
+|
+|___src/Display
+|             |___GuiPanel.java
+|             |__more soon...
+|
+|__more soon....
+_________________________________
 INSTRUCTIONS:
+Action.output.ShowCube(String[][][] cube): gives a terminal log of cube faces
+Action.output.TestOutput(String[][][] cube): gives data bill of cube
+Action.setting.CubesetDefault(String[][][] cube): default Rubik colours
+Action.setting.CubesetTest(String[][][] cube): white cube
+Action.moves.U,D,R,L,Ur,Dr,Rr,Lr,x,xr,yr(String[][][] cube, int side): cube rotation methods
 __________________________________
 By James Lee Hill
