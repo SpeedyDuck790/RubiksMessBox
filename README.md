@@ -16,10 +16,10 @@ src
 |__more soon....
 _________________________________
 INSTRUCTIONS:
-Action.output.ShowCube(String[][][] cube): gives a terminal log of cube faces
-Action.output.TestOutput(String[][][] cube): gives data bill of cube
-Action.setting.CubesetDefault(String[][][] cube): default Rubik colours
-Action.setting.CubesetTest(String[][][] cube): white cube
-Action.moves.U,D,R,L,Ur,Dr,Rr,Lr,x,xr,yr(String[][][] cube, int side): cube rotation methods
+Action.output.ShowCube(String[][][] cube): gives a terminal log of cube faces<br>
+Action.output.TestOutput(String[][][] cube): gives data bill of cube<br>
+Action.setting.CubesetDefault(String[][][] cube): default Rubik colours<br>
+Action.setting.CubesetTest(String[][][] cube): white cube<br>
+Action.moves.U,D,R,L,Ur,Dr,Rr,Lr,x,xr,yr(String[][][] cube, int side): cube rotation methods<br>
 __________________________________
 By James Lee Hill
