@@ -3,25 +3,50 @@ Goal: Rubric cube Sim with Gui and notation reader
 CS break project-
 __________________________________
 <pre>
-src<br>
-|____Rubik.java<br>
-|____src/Action<br>
-|              |____moves.java<br>
-|              |____output.java<br>
-|              |____setting.java<br>
-|<br>
-|___src/Display<br>
-|             |___screen.java<br>
-|             |__more soon...<br>
-|<br>
-|__more soon....<br>
+│   README.md
+│
+└───src
+    │   RubikStart.java
+    │
+    ├───Actions
+    │       allnotation.txt
+    │       moves.java
+    │       output.java
+    │
+    ├───controls
+    │       keyboard.java
+    │       rotationStation.java
+    │
+    ├───Cube
+    │       positionSetting.java
+    │
+    └───Display
+            screen.java
 </pre>
 _________________________________
-## INSTRUCTIONS:<br>
-**Action.output.ShowCube(String[][][] cube):** gives a terminal log of cube faces<br>
-**Action.output.TestOutput(String[][][] cube):** gives data bill of cube<br>
-**Action.setting.CubesetDefault(String[][][] cube):** default Rubik colours<br>
-**Action.setting.CubesetTest(String[][][] cube):** white cube<br>
-**Action.moves.U,D,R,L,Ur,Dr,Rr,Lr,x,xr,yr(String[][][] cube, int side):** cube rotation methods<br>
+## INSTRUCTIONS:<be>
+<pre>
+  Keyboard Support__________________________________________
+  Q W E R T
+  A S D F G
+          B
+  Q = U
+  W = D
+  E = L
+  R = R
+  S = F
+  D = B
+  T = x
+  F = y
+  B = z
+  Shift+ = *'
+  A = face rotation -(front>back>left>right>top>bottom>loop)
+  R = Reset to default
+  ___________________________________________________________
+  Controller- should appear on startup *to be completed
+  ___________________________________________________________
+  Notation Reader- coming soon
+  ___________________________________________________________
+</pre>
 __________________________________
 #### By James Lee Hill
