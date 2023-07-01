@@ -1,5 +1,5 @@
 # RubiksMessBox
-Goal: Rubric cube Sim with Gui and notation reader
+Goal: Rubiks cube Sim with Gui and notation reader
 CS break project-
 __________________________________
 <pre>
