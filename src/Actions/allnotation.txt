@@ -6,5 +6,20 @@ Ur,Dr,Rr,Lr,(Fr,Br)
 x y (z) // middle rotation x is up and y is left
 xr yr (zr)
 
+Keybinds:
+U=Q
+D=W
+L=E
+R=R
+F=S
+B=D
+x=T
+y=G
+z=B
+*r=Shift
 
+
+
+A=face change cycle <front left back right top bottom front>
+F=Reset cube
 (*) = not needed due to perspective
