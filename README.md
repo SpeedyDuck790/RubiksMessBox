@@ -5,13 +5,13 @@ __________________________________
 <pre>
 src<br>
 |____Rubik.java<br>
-|____src/Display<br>
+|____src/Action<br>
 |              |____moves.java<br>
 |              |____output.java<br>
 |              |____setting.java<br>
 |<br>
 |___src/Display<br>
-|             |___GuiPanel.java<br>
+|             |___screen.java<br>
 |             |__more soon...<br>
 |<br>
 |__more soon....<br>
