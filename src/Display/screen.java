@@ -5,6 +5,8 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import Actions.moves;
+import Actions.setting;
 import controls.keyboard;
 
 import java.io.*;
@@ -71,8 +73,12 @@ public class screen extends JPanel implements Runnable {
         throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
 
+    String[][][] cube = new String[6][3][3];
+    int face = 0;
+
     // update method
     public void update() {
+        setting set = new setting();
         if (keyValue.UPressed == true) {
             System.out.println("UPressed");
         }
@@ -84,6 +90,7 @@ public class screen extends JPanel implements Runnable {
         }
         if (keyValue.RPressed == true) {
             System.out.println("RPressed");
+
         }
         if (keyValue.FPressed == true) {
             System.out.println("FPressed");
@@ -102,6 +109,7 @@ public class screen extends JPanel implements Runnable {
         }
         if (keyValue.resetPressed == true) {
             System.out.println("resetPressed");
+            cube = set.CubesetDefault(cube);
         }
         if (keyValue.newfacepressed == true) {
             System.out.println("newfacepressed");
@@ -109,9 +117,6 @@ public class screen extends JPanel implements Runnable {
         }
 
     }
-
-    String[][][] cube = new String[6][3][3];
-    int face = 0;
 
     public void setface() {
         if (face == 5) {
