@@ -6,6 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.io.*;
 import java.util.*;
+import controls.*;
 
 class RubikStart {
     public static void main(String[] args) {
@@ -25,6 +26,9 @@ class RubikStart {
         windowFrame.setVisible(true);
 
         game.startGthread();
+
+        rotationStation controller = new rotationStation();
+        controller.createStation();
 
         // ===========================================================================
 
