@@ -98,22 +98,22 @@ public class moves {
         ReplacingCube[Nside3][1][0] = b;
         ReplacingCube[Nside3][2][0] = c;
 
-        // // side
-        // ReplacingCube[NsideS][0][0] = cube[NsideS][0][2];
-        // ReplacingCube[NsideS][1][0] = cube[NsideS][0][1];
-        // ReplacingCube[NsideS][2][0] = cube[NsideS][0][0];
+        // side
+        ReplacingCube[NsideS][0][0] = cube[NsideS][0][2];
+        ReplacingCube[NsideS][1][0] = cube[NsideS][0][1];
+        ReplacingCube[NsideS][2][0] = cube[NsideS][0][0];
 
-        // ReplacingCube[NsideS][0][0] = cube[NsideS][0][2];
-        // ReplacingCube[NsideS][0][1] = cube[NsideS][1][2];
-        // ReplacingCube[NsideS][0][2] = cube[NsideS][2][2];
+        ReplacingCube[NsideS][0][0] = cube[NsideS][0][2];
+        ReplacingCube[NsideS][0][1] = cube[NsideS][1][2];
+        ReplacingCube[NsideS][0][2] = cube[NsideS][2][2];
 
-        // ReplacingCube[NsideS][0][2] = cube[NsideS][2][2];
-        // ReplacingCube[NsideS][1][2] = cube[NsideS][2][1];
-        // ReplacingCube[NsideS][2][2] = cube[NsideS][2][0];
+        ReplacingCube[NsideS][0][2] = cube[NsideS][2][2];
+        ReplacingCube[NsideS][1][2] = cube[NsideS][2][1];
+        ReplacingCube[NsideS][2][2] = cube[NsideS][2][0];
 
-        // ReplacingCube[NsideS][2][2] = cube[NsideS][2][0];
-        // ReplacingCube[NsideS][2][1] = cube[NsideS][1][0];
-        // ReplacingCube[NsideS][2][0] = cube[NsideS][0][0];
+        ReplacingCube[NsideS][2][2] = cube[NsideS][2][0];
+        ReplacingCube[NsideS][2][1] = cube[NsideS][1][0];
+        ReplacingCube[NsideS][2][0] = cube[NsideS][0][0];
 
         return ReplacingCube;
     }

@@ -6,6 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import Cube.*;
 import Actions.moves;
+import Actions.output;
 import controls.keyboard;
 
 import java.io.*;
@@ -78,6 +79,7 @@ public class screen extends JPanel implements Runnable {
     // update method
     public void update() {
         positionSetting position = new positionSetting();
+        output output = new output();
         moves move = new moves();
         if (keyValue.UPressed == true) {
             System.out.println("UPressed");
@@ -122,6 +124,11 @@ public class screen extends JPanel implements Runnable {
         if (keyValue.newfacepressed == true) {
             System.out.println("newfacepressed");
             setface();
+            output.ShowSide(face);
+        }
+        if (keyValue.switched == true) {
+            System.out.println("switched");
+            cube = position.switched();
         }
 
     }

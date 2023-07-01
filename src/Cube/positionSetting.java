@@ -40,4 +40,43 @@ public class positionSetting {
         return Default;
 
     }
+
+    public String[][][] switched() {
+
+        String[][][] switched = {
+                {
+                        { "G", "B", "G" },
+                        { "B", "G", "B" },
+                        { "G", "B", "G" },
+                },
+                {
+                        { "B", "G", "B" },
+                        { "G", "B", "G" },
+                        { "B", "G", "B" },
+                },
+                {
+                        { "O", "R", "O" },
+                        { "R", "O", "R" },
+                        { "O", "R", "O" },
+                },
+                {
+                        { "R", "O", "R" },
+                        { "O", "R", "O" },
+                        { "R", "O", "R" },
+                },
+                {
+                        { "W", "Y", "W" },
+                        { "Y", "W", "Y" },
+                        { "W", "Y", "W" },
+                },
+                {
+                        { "Y", "W", "Y" },
+                        { "W", "Y", "W" },
+                        { "Y", "W", "Y" },
+                },
+        };
+
+        return switched;
+
+    }
 }

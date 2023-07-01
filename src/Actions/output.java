@@ -18,6 +18,30 @@ public class output {
 
     }
 
+    public void ShowSide(int Cside) {
+        switch (Cside) {
+            case 0:
+                System.out.println("Front");
+                break;
+            case 1:
+                System.out.println("Back");
+                break;
+            case 2:
+                System.out.println("left");
+                break;
+            case 3:
+                System.out.println("right");
+                break;
+            case 4:
+                System.out.println("up");
+                break;
+            case 5:
+                System.out.println("down");
+                break;
+        }
+
+    }
+
     public void ShowCube(String[][][] cube) {
 
         for (side = 0; side < 6; side++) {
@@ -27,26 +51,7 @@ public class output {
                 }
                 System.out.println("");
             }
-            // switch (side) {
-            // case 0:
-            // System.out.println("Front");
-            // break;
-            // case 1:
-            // System.out.println("Back");
-            // break;
-            // case 2:
-            // System.out.println("left");
-            // break;
-            // case 3:
-            // System.out.println("right");
-            // break;
-            // case 4:
-            // System.out.println("up");
-            // break;
-            // case 5:
-            // System.out.println("down");
-            // break;
-            // }
+
             System.out.println("---");
         }
 
