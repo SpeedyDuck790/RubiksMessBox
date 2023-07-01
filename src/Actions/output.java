@@ -1,7 +1,5 @@
 package Actions;
 
-import RubicCube.Cube;
-
 public class output {
 
     int side;

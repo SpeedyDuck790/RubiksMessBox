@@ -4,9 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
-
+import Cube.*;
 import Actions.moves;
-import Actions.setting;
 import controls.keyboard;
 
 import java.io.*;
@@ -78,38 +77,47 @@ public class screen extends JPanel implements Runnable {
 
     // update method
     public void update() {
-        setting set = new setting();
+        positionSetting position = new positionSetting();
+        moves move = new moves();
         if (keyValue.UPressed == true) {
             System.out.println("UPressed");
         }
+        move.U(cube, face);
         if (keyValue.DPressed == true) {
             System.out.println("DPressed");
+            move.D(cube, face);
         }
         if (keyValue.LPressed == true) {
             System.out.println("LPressed");
+            move.L(cube, face);
         }
         if (keyValue.RPressed == true) {
             System.out.println("RPressed");
-
+            move.R(cube, face);
         }
         if (keyValue.FPressed == true) {
             System.out.println("FPressed");
+            // move.F(cube, face);
         }
         if (keyValue.BPressed == true) {
             System.out.println("BPressed");
+            // move.B(cube, face);
         }
         if (keyValue.xPressed == true) {
             System.out.println("xPressed");
+            // move.x(cube, face);
         }
         if (keyValue.yPressed == true) {
             System.out.println("yPressed");
+            // move.y(cube, face);
         }
         if (keyValue.zPressed == true) {
             System.out.println("zPressed");
+            // move.z(cube, face);
         }
         if (keyValue.resetPressed == true) {
             System.out.println("resetPressed");
-            cube = set.CubesetDefault(cube);
+            cube = position.Default();
         }
         if (keyValue.newfacepressed == true) {
             System.out.println("newfacepressed");
@@ -144,175 +152,61 @@ public class screen extends JPanel implements Runnable {
         Graphics2D tile8 = (Graphics2D) g;
         Graphics2D tile9 = (Graphics2D) g;
 
-        // draw cube
-        if (face == 0) {
-            tile1.setColor(Color.WHITE);
-            tile1.fillRect(0, 0, cubeTile, cubeTile);
+        String colour1 = grabcubecolor(tile1, cube, face, 0, 0);
+        String colour2 = grabcubecolor(tile2, cube, face, 0, 1);
+        String color3 = grabcubecolor(tile3, cube, face, 0, 2);
+        String color4 = grabcubecolor(tile4, cube, face, 1, 0);
+        String color5 = grabcubecolor(tile5, cube, face, 1, 1);
+        String color6 = grabcubecolor(tile6, cube, face, 1, 2);
+        String color7 = grabcubecolor(tile7, cube, face, 2, 0);
+        String color8 = grabcubecolor(tile8, cube, face, 2, 1);
+        String color9 = grabcubecolor(tile9, cube, face, 2, 2);
 
-            tile2.setColor(Color.WHITE);
-            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
+        System.out.println(colour1 + colour2 + color3 + color4 + color5 + color6 + color7 + color8 + color9);
 
-            tile3.setColor(Color.WHITE);
-            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
+        colorchoice(colour1, tile1);
+        tile1.fillRect(0, 0, cubeTile, cubeTile);
+        colorchoice(colour2, tile2);
+        tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
+        colorchoice(color3, tile3);
+        tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
+        colorchoice(color4, tile4);
+        tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
+        colorchoice(color5, tile5);
+        tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
+        colorchoice(color6, tile6);
+        tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
+        colorchoice(color7, tile7);
+        tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
+        colorchoice(color8, tile8);
+        tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
+        colorchoice(color9, tile9);
+        tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
 
-            tile4.setColor(Color.WHITE);
-            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
-
-            tile5.setColor(Color.WHITE);
-            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
-
-            tile6.setColor(Color.WHITE);
-            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
-
-            tile7.setColor(Color.WHITE);
-            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
-
-            tile8.setColor(Color.WHITE);
-            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
-
-            tile9.setColor(Color.WHITE);
-            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
-        }
-        if (face == 1) {
-            tile1.setColor(Color.RED);
-            tile1.fillRect(0, 0, cubeTile, cubeTile);
-
-            tile2.setColor(Color.RED);
-            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
-
-            tile3.setColor(Color.RED);
-            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
-
-            tile4.setColor(Color.RED);
-            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
-
-            tile5.setColor(Color.RED);
-            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
-
-            tile6.setColor(Color.RED);
-            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
-
-            tile7.setColor(Color.RED);
-            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
-
-            tile8.setColor(Color.RED);
-            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
-
-            tile9.setColor(Color.GREEN);
-            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
-        }
-        if (face == 2) {
-            tile1.setColor(Color.ORANGE);
-            tile1.fillRect(0, 0, cubeTile, cubeTile);
-
-            tile2.setColor(Color.ORANGE);
-            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
-
-            tile3.setColor(Color.ORANGE);
-            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
-
-            tile4.setColor(Color.ORANGE);
-            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
-
-            tile5.setColor(Color.ORANGE);
-            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
-
-            tile6.setColor(Color.ORANGE);
-            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
-
-            tile7.setColor(Color.ORANGE);
-            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
-
-            tile8.setColor(Color.ORANGE);
-            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
-
-            tile9.setColor(Color.ORANGE);
-            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
-        }
-        if (face == 3) {
-            tile1.setColor(Color.YELLOW);
-            tile1.fillRect(0, 0, cubeTile, cubeTile);
-
-            tile2.setColor(Color.YELLOW);
-            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
-
-            tile3.setColor(Color.YELLOW);
-            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
-
-            tile4.setColor(Color.YELLOW);
-            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
-
-            tile5.setColor(Color.YELLOW);
-            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
-
-            tile6.setColor(Color.YELLOW);
-            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
-
-            tile7.setColor(Color.YELLOW);
-            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
-
-            tile8.setColor(Color.YELLOW);
-            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
-
-            tile9.setColor(Color.YELLOW);
-            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
-        }
-        if (face == 4) {
-            tile1.setColor(Color.GREEN);
-            tile1.fillRect(0, 0, cubeTile, cubeTile);
-
-            tile2.setColor(Color.GREEN);
-            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
-
-            tile3.setColor(Color.GREEN);
-            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
-
-            tile4.setColor(Color.GREEN);
-            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
-
-            tile5.setColor(Color.GREEN);
-            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
-
-            tile6.setColor(Color.GREEN);
-            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
-
-            tile7.setColor(Color.GREEN);
-            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
-
-            tile8.setColor(Color.GREEN);
-            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
-
-            tile9.setColor(Color.GREEN);
-            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
-        }
-        if (face == 5) {
-            tile1.setColor(Color.RED);
-            tile1.fillRect(0, 0, cubeTile, cubeTile);
-
-            tile2.setColor(Color.RED);
-            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
-
-            tile3.setColor(Color.RED);
-            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
-
-            tile4.setColor(Color.RED);
-            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
-
-            tile5.setColor(Color.RED);
-            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
-
-            tile6.setColor(Color.RED);
-            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
-
-            tile7.setColor(Color.RED);
-            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
-
-            tile8.setColor(Color.RED);
-            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
-
-            tile9.setColor(Color.RED);
-            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
-        }
     }
 
+    public String grabcubecolor(Graphics2D tile, String[][][] cube, int face, int rows, int cols) {
+        String[][][] cubeConfig = cube;
+        String color = cubeConfig[face][rows][cols];
+        return color;
+    }
+
+    public void colorchoice(String color, Graphics2D tile) {
+        if (color == "W") {
+            tile.setColor(Color.WHITE);
+        } else if (color == "Y") {
+            tile.setColor(Color.YELLOW);
+        } else if (color == "R") {
+            tile.setColor(Color.RED);
+        } else if (color == "O") {
+            tile.setColor(Color.ORANGE);
+        } else if (color == "B") {
+            tile.setColor(Color.BLUE);
+        } else if (color == "G") {
+            tile.setColor(Color.GREEN);
+        } else {
+            tile.setColor(Color.PINK);
+        }
+
+    }
 }
