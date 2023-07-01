@@ -30,9 +30,6 @@ class Rubic {
 
         System.out.println("Hello im RubicMessBox!");
 
-        String[][][] cube = new String[6][3][3];
-        System.out.println("Cube created");
-
         moves move = new moves();
         setting set = new setting();
         output out = new output();
