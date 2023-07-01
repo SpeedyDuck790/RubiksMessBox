@@ -1,8 +1,32 @@
 import RubicCube.Cube;
 import Actions.*;
+import Display.screen;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.io.*;
+import java.util.*;
 
 class Rubic {
     public static void main(String[] args) {
+
+        // JFrame
+
+        JFrame windowFrame = new JFrame();
+        windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        windowFrame.setResizable(false);
+        windowFrame.setTitle("RubicMessBox");
+        screen game = new screen();
+        windowFrame.add(game);
+
+        windowFrame.pack();
+
+        windowFrame.setLocationRelativeTo(null);
+        windowFrame.setVisible(true);
+
+        game.startGthread();
+
+        // ===========================================================================
 
         System.out.println("Hello im RubicMessBox!");
 
@@ -13,39 +37,39 @@ class Rubic {
         setting set = new setting();
         output out = new output();
 
-        System.out.println("----------------Cube--------------");
+        // System.out.println("----------------Cube--------------");
 
-        cube = set.CubesetDefault(cube);
+        // cube = set.CubesetDefault(cube);
 
-        out.ShowCube(cube);
+        // out.ShowCube(cube);
 
-        System.out.println("----------------Cube R turned--------------");
+        // System.out.println("----------------Cube R turned--------------");
 
-        move.R(cube, 0);
+        // move.R(cube, 0);
 
-        out.ShowCube(cube);
-        System.out.println("----------------Cube R turned--------------");
+        // out.ShowCube(cube);
+        // System.out.println("----------------Cube R turned--------------");
 
-        move.R(cube, 0);
+        // move.R(cube, 0);
 
-        out.ShowCube(cube);
-        System.out.println("----------------Cube R turned--------------");
+        // out.ShowCube(cube);
+        // System.out.println("----------------Cube R turned--------------");
 
-        move.R(cube, 0);
+        // move.R(cube, 0);
 
-        out.ShowCube(cube);
-        System.out.println("----------------back to normal--------------");
+        // out.ShowCube(cube);
+        // System.out.println("----------------back to normal--------------");
 
-        move.R(cube, 0);
+        // move.R(cube, 0);
 
-        out.ShowCube(cube);
+        // out.ShowCube(cube);
 
-        System.out.println("----------------Cube L turned--------------");
+        // System.out.println("----------------Cube L turned--------------");
 
-        move.L(cube, 0);
-        move.R(cube, 0);
+        // move.L(cube, 0);
+        // move.R(cube, 0);
 
-        out.ShowCube(cube);
+        // out.ShowCube(cube);
 
     }
 }
