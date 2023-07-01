@@ -146,6 +146,7 @@ public class screen extends JPanel implements Runnable {
     }
 
     public void setcubedata(String[][][] newcube) {
+        System.out.println("cube changed");
         cube = newcube;
     }
 
