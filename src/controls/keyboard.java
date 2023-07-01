@@ -37,6 +37,9 @@ public class keyboard implements KeyListener {
         if (key == KeyEvent.VK_D) {// B
             BPressed = true;
         }
+        if (key == KeyEvent.VK_A) {// newface
+            newfacepressed = true;
+        }
 
         if (key == KeyEvent.VK_F) {// reset
             resetPressed = true;
@@ -73,6 +76,9 @@ public class keyboard implements KeyListener {
         }
         if (key == KeyEvent.VK_D) {// B
             BPressed = false;
+        }
+        if (key == KeyEvent.VK_A) {// newface
+            newfacepressed = false;
         }
 
         if (key == KeyEvent.VK_F) {// reset

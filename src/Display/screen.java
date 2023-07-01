@@ -41,13 +41,31 @@ public class screen extends JPanel implements Runnable {
         Gthread.start();
     }
 
+    int FPS = 5;
+
     // game loop
     @Override
     public void run() {
+        double actionInterval = 1000000000.0 / FPS;
+        double nextAction = System.nanoTime() + actionInterval;
         while (Gthread != null) {
 
             update();
             repaint();
+
+            try {
+                double wait = nextAction - System.nanoTime();
+                wait = wait / 1000000;
+
+                if (wait < 0) {
+                    wait = 0;
+                }
+                Thread.sleep((long) wait);
+                nextAction += actionInterval;
+
+            } catch (Exception e) {
+                System.out.println("Error in game loop");
+            }
 
         }
         throw new UnsupportedOperationException("Unimplemented method 'run'");
@@ -87,6 +105,7 @@ public class screen extends JPanel implements Runnable {
         }
         if (keyValue.newfacepressed == true) {
             System.out.println("newfacepressed");
+            setface();
         }
 
     }
@@ -95,7 +114,11 @@ public class screen extends JPanel implements Runnable {
     int face = 0;
 
     public void setface() {
-        face = face + 1;
+        if (face == 5) {
+            face = 0;
+        } else {
+            face = face + 1;
+        }
     }
 
     public int getface() {
@@ -121,28 +144,28 @@ public class screen extends JPanel implements Runnable {
             tile1.setColor(Color.WHITE);
             tile1.fillRect(0, 0, cubeTile, cubeTile);
 
-            tile2.setColor(Color.RED);
+            tile2.setColor(Color.WHITE);
             tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
 
-            tile3.setColor(Color.BLUE);
+            tile3.setColor(Color.WHITE);
             tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
 
-            tile4.setColor(Color.GREEN);
+            tile4.setColor(Color.WHITE);
             tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
 
-            tile5.setColor(Color.ORANGE);
+            tile5.setColor(Color.WHITE);
             tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
 
-            tile6.setColor(Color.YELLOW);
+            tile6.setColor(Color.WHITE);
             tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
 
-            tile7.setColor(Color.BLUE);
+            tile7.setColor(Color.WHITE);
             tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
 
-            tile8.setColor(Color.RED);
+            tile8.setColor(Color.WHITE);
             tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
 
-            tile9.setColor(Color.GREEN);
+            tile9.setColor(Color.WHITE);
             tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
         }
         if (face == 1) {
@@ -155,10 +178,10 @@ public class screen extends JPanel implements Runnable {
             tile3.setColor(Color.RED);
             tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
 
-            tile4.setColor(Color.GREEN);
+            tile4.setColor(Color.RED);
             tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
 
-            tile5.setColor(Color.ORANGE);
+            tile5.setColor(Color.RED);
             tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
 
             tile6.setColor(Color.RED);
@@ -171,6 +194,118 @@ public class screen extends JPanel implements Runnable {
             tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
 
             tile9.setColor(Color.GREEN);
+            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
+        }
+        if (face == 2) {
+            tile1.setColor(Color.ORANGE);
+            tile1.fillRect(0, 0, cubeTile, cubeTile);
+
+            tile2.setColor(Color.ORANGE);
+            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
+
+            tile3.setColor(Color.ORANGE);
+            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
+
+            tile4.setColor(Color.ORANGE);
+            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
+
+            tile5.setColor(Color.ORANGE);
+            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
+
+            tile6.setColor(Color.ORANGE);
+            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
+
+            tile7.setColor(Color.ORANGE);
+            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
+
+            tile8.setColor(Color.ORANGE);
+            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
+
+            tile9.setColor(Color.ORANGE);
+            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
+        }
+        if (face == 3) {
+            tile1.setColor(Color.YELLOW);
+            tile1.fillRect(0, 0, cubeTile, cubeTile);
+
+            tile2.setColor(Color.YELLOW);
+            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
+
+            tile3.setColor(Color.YELLOW);
+            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
+
+            tile4.setColor(Color.YELLOW);
+            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
+
+            tile5.setColor(Color.YELLOW);
+            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
+
+            tile6.setColor(Color.YELLOW);
+            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
+
+            tile7.setColor(Color.YELLOW);
+            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
+
+            tile8.setColor(Color.YELLOW);
+            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
+
+            tile9.setColor(Color.YELLOW);
+            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
+        }
+        if (face == 4) {
+            tile1.setColor(Color.GREEN);
+            tile1.fillRect(0, 0, cubeTile, cubeTile);
+
+            tile2.setColor(Color.GREEN);
+            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
+
+            tile3.setColor(Color.GREEN);
+            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
+
+            tile4.setColor(Color.GREEN);
+            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
+
+            tile5.setColor(Color.GREEN);
+            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
+
+            tile6.setColor(Color.GREEN);
+            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
+
+            tile7.setColor(Color.GREEN);
+            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
+
+            tile8.setColor(Color.GREEN);
+            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
+
+            tile9.setColor(Color.GREEN);
+            tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
+        }
+        if (face == 5) {
+            tile1.setColor(Color.RED);
+            tile1.fillRect(0, 0, cubeTile, cubeTile);
+
+            tile2.setColor(Color.RED);
+            tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
+
+            tile3.setColor(Color.RED);
+            tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
+
+            tile4.setColor(Color.RED);
+            tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
+
+            tile5.setColor(Color.RED);
+            tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
+
+            tile6.setColor(Color.RED);
+            tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
+
+            tile7.setColor(Color.RED);
+            tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
+
+            tile8.setColor(Color.RED);
+            tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
+
+            tile9.setColor(Color.RED);
             tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
         }
     }
