@@ -32,7 +32,7 @@ class RubikStart {
 
         // ===========================================================================
 
-        System.out.println("Hello im RubicMessBox!");
+        System.out.println("Hello im RubikMessBox!");
         System.out.println("I am a Rubik's Cube simulator!");
     }
 }

@@ -145,6 +145,15 @@ public class screen extends JPanel implements Runnable {
         return face;
     }
 
+    public void setcubedata(String[][][] newcube) {
+        cube = newcube;
+    }
+
+    public String[][][] getcubedata() {
+        return cube;
+
+    }
+
     // update method
     public void paintComponent(Graphics g) {
 
