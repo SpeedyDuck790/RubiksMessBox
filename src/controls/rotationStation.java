@@ -1,5 +1,9 @@
 package controls;
 
+import Actions.*;
+import Cube.positionSetting;
+import Display.screen;
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +14,7 @@ import javax.swing.JPanel;
 public class rotationStation {
 
     public void createStation() {
+
         setLayout(new FlowLayout());
 
         JFrame Gamepad = new JFrame("Controller Rubiks Cube");
@@ -72,6 +77,11 @@ public class rotationStation {
         Gamepad.getContentPane().add(M);
         M.setBounds(buttonSize * 4, 0, buttonSize, buttonSize);
         M.addActionListener(new MyActionListener());
+
+        JButton face = new JButton("Face");
+        Gamepad.getContentPane().add(face);
+        face.setBounds(buttonSize * 4, buttonSize, buttonSize, buttonSize);
+        face.addActionListener(new MyActionListener());
     }
 
     private void setLayout(FlowLayout flowLayout) {
@@ -80,8 +90,44 @@ public class rotationStation {
     private static class MyActionListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
+            moves move = new moves();
+            positionSetting set = new positionSetting();
+            screen cubesim = new screen();
+            int face = cubesim.getface();
+            String[][][] cube = cubesim.getcubedata();
             JButton button = (JButton) e.getSource();
-            System.out.println("Button " + button.getText() + " clicked");
+            if (button.getText() == "U") {
+                System.out.println("U");
+                cubesim.setcubedata(move.U(cube, face));
+            } else if (button.getText() == "D") {
+                System.out.println("D");
+                move.D(cube, face);
+            } else if (button.getText() == "L") {
+                System.out.println("L");
+                move.L(cube, face);
+            } else if (button.getText() == "R") {
+                System.out.println("R");
+                cubesim.setcubedata(move.R(cube, face));
+            } else if (button.getText() == "F") {
+                System.out.println("F");
+                // move.F(cube, face);
+            } else if (button.getText() == "B") {
+                System.out.println("B");
+                // move.B(cube, face);
+            } else if (button.getText() == "x") {
+                System.out.println("x");
+            } else if (button.getText() == "y") {
+                System.out.println("y");
+            } else if (button.getText() == "z") {
+                System.out.println("z");
+            } else if (button.getText() == "!R") {
+                System.out.println("!R");
+                cubesim.setcubedata(set.Default());
+            } else if (button.getText() == "Face") {
+                System.out.println("Face");
+                cubesim.setface();
+            }
+
         }
 
     }
