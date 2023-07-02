@@ -83,34 +83,34 @@ public class positionSetting {
         public String[][][] testingRotation() {
                 String[][][] testingRotation = {
                                 {
-                                                { "G", "G", "B" },
+                                                { "W", "O", "W" },
                                                 { "Y", "G", "B" },
-                                                { "Y", "R", "R" },
+                                                { "W", "R", "W" },
                                 },
                                 {
-                                                { "G", "G", "B" },
-                                                { "Y", "B", "B" },
-                                                { "Y", "R", "R" },
+                                                { "W", "G", "W" },
+                                                { "Y", "B", "O" },
+                                                { "W", "R", "W" },
                                 },
                                 {
-                                                { "G", "G", "B" },
+                                                { "W", "G", "W" },
                                                 { "Y", "O", "B" },
-                                                { "Y", "R", "R" },
+                                                { "W", "R", "W" },
                                 },
                                 {
-                                                { "G", "G", "B" },
+                                                { "W", "G", "W" },
                                                 { "Y", "R", "B" },
-                                                { "Y", "R", "R" },
+                                                { "W", "O", "W" },
                                 },
                                 {
-                                                { "G", "G", "B" },
+                                                { "W", "G", "W" },
                                                 { "Y", "W", "B" },
-                                                { "Y", "R", "R" },
+                                                { "W", "R", "W" },
                                 },
                                 {
-                                                { "G", "G", "B" },
-                                                { "Y", "Y", "B" },
-                                                { "Y", "R", "R" },
+                                                { "W", "G", "W" },
+                                                { "G", "Y", "B" },
+                                                { "W", "R", "W" },
                                 },
                 };
                 return testingRotation;
