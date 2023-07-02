@@ -21,14 +21,14 @@ public class screen extends JPanel implements Runnable {
     final int cubeTile = sizecubetile * scale;
 
     // Screen dimensions
-    final int screenwidth = cubeTile * 3;
-    final int screenheight = cubeTile * 3;
+    final int screenwidth = cubeTile * 11;
+    final int screenheight = cubeTile * 11;
     keyboard keyValue = new keyboard();
 
     // screen method
     public screen() {
         this.setPreferredSize(new Dimension(screenwidth, screenheight));
-        this.setBackground(Color.BLACK);
+        this.setBackground(Color.LIGHT_GRAY);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyValue);
         this.setFocusable(true);
@@ -172,6 +172,8 @@ public class screen extends JPanel implements Runnable {
         Graphics2D tile7 = (Graphics2D) g;
         Graphics2D tile8 = (Graphics2D) g;
         Graphics2D tile9 = (Graphics2D) g;
+        Graphics2D space = (Graphics2D) g;
+        Graphics2D title = (Graphics2D) g;
 
         String colour1 = grabcubecolor(tile1, cube, face, 0, 0);
         String colour2 = grabcubecolor(tile2, cube, face, 0, 1);
@@ -183,27 +185,107 @@ public class screen extends JPanel implements Runnable {
         String color8 = grabcubecolor(tile8, cube, face, 2, 1);
         String color9 = grabcubecolor(tile9, cube, face, 2, 2);
 
+        String colorR1 = grabcubecolor(tile1, cube, 3, 0, 0);
+        String colorR2 = grabcubecolor(tile2, cube, 3, 0, 1);
+        String colorR3 = grabcubecolor(tile3, cube, 3, 0, 2);
+        String colorR4 = grabcubecolor(tile4, cube, 3, 1, 0);
+        String colorR5 = grabcubecolor(tile5, cube, 3, 1, 1);
+        String colorR6 = grabcubecolor(tile6, cube, 3, 1, 2);
+        String colorR7 = grabcubecolor(tile7, cube, 3, 2, 0);
+        String colorR8 = grabcubecolor(tile8, cube, 3, 2, 1);
+        String colorR9 = grabcubecolor(tile9, cube, 3, 2, 2);
+
         System.out.println(colour1 + colour2 + color3 + color4 + color5 + color6 + color7 + color8 + color9);
 
-        colorchoice(colour1, tile1);
-        tile1.fillRect(0, 0, cubeTile, cubeTile);
-        colorchoice(colour2, tile2);
-        tile2.fillRect(cubeTile, 0, cubeTile, cubeTile);
-        colorchoice(color3, tile3);
-        tile3.fillRect(cubeTile * 2, 0, cubeTile, cubeTile);
-        colorchoice(color4, tile4);
-        tile4.fillRect(0, cubeTile, cubeTile, cubeTile);
-        colorchoice(color5, tile5);
-        tile5.fillRect(cubeTile, cubeTile, cubeTile, cubeTile);
-        colorchoice(color6, tile6);
-        tile6.fillRect(cubeTile * 2, cubeTile, cubeTile, cubeTile);
-        colorchoice(color7, tile7);
-        tile7.fillRect(0, cubeTile * 2, cubeTile, cubeTile);
-        colorchoice(color8, tile8);
-        tile8.fillRect(cubeTile, cubeTile * 2, cubeTile, cubeTile);
-        colorchoice(color9, tile9);
-        tile9.fillRect(cubeTile * 2, cubeTile * 2, cubeTile, cubeTile);
+        int rubbreak = 50;
+        int spacing = cubeTile / 5;
+        int rubikTile = 100 * 3 + (spacing * 2);
+        int rubikview = 300 + (spacing * 4) + 2 * rubbreak;
+        int textalign = 140 + spacing * 2;
+        colorchoice("X", space);
+        space.fillRect(rubbreak, 0, rubikTile + spacing * 2, spacing);
+        colorchoice("X", space);
+        space.fillRect(rubbreak, 3 * cubeTile + 3 * spacing, rubikTile + spacing * 2, spacing);
 
+        colorchoice("X", space);
+        space.fillRect(rubbreak, 2 * cubeTile + 2 * spacing, rubikTile + spacing * 2, spacing);
+
+        colorchoice("X", space);
+        space.fillRect(rubbreak, cubeTile + spacing, rubikTile + spacing * 2, spacing);
+
+        colorchoice("X", space);
+        space.fillRect(rubbreak, spacing, spacing, rubikTile);
+        colorchoice(colour1, tile1);
+        tile1.fillRect(rubbreak + spacing, spacing, cubeTile, cubeTile);
+        colorchoice("X", space);
+        space.fillRect(rubbreak + spacing + cubeTile, spacing, spacing, rubikTile);
+        colorchoice(colour2, tile2);
+        tile2.fillRect(rubbreak + cubeTile + spacing * 2, spacing, cubeTile, cubeTile);
+        colorchoice("X", space);
+        space.fillRect(rubbreak + 2 * spacing + (2 * cubeTile), spacing, spacing, rubikTile);
+        colorchoice(color3, tile3);
+        tile3.fillRect(rubbreak + 3 * spacing + (cubeTile * 2), spacing, cubeTile, cubeTile);
+        colorchoice("X", space);
+        space.fillRect(rubbreak + 3 * spacing + cubeTile * 3, spacing, spacing, rubikTile);
+
+        colorchoice(color4, tile4);
+        tile4.fillRect(rubbreak + spacing, cubeTile + 2 * spacing, cubeTile, cubeTile);
+        colorchoice(color5, space);
+        tile5.fillRect(rubbreak + cubeTile + spacing * 2, cubeTile + 2 * spacing, cubeTile, cubeTile);
+        colorchoice(color6, space);
+        tile6.fillRect(rubbreak + 3 * spacing + (cubeTile * 2), cubeTile + 2 * spacing, cubeTile, cubeTile);
+
+        colorchoice(color7, tile7);
+        tile4.fillRect(rubbreak + spacing, 2 * cubeTile + 3 * spacing, cubeTile, cubeTile);
+        colorchoice(color8, tile8);
+        tile5.fillRect(rubbreak + cubeTile + spacing * 2, 2 * cubeTile + 3 * spacing, cubeTile, cubeTile);
+        colorchoice(color9, tile9);
+        tile6.fillRect(rubbreak + 3 * spacing + (cubeTile * 2), 2 * cubeTile + 3 * spacing, cubeTile, cubeTile);
+
+        colorchoice("X", space);
+        space.fillRect(rubikview, 0, rubikTile + spacing * 2, spacing);
+        colorchoice("X", space);
+        space.fillRect(rubikview, 3 * cubeTile + 3 * spacing, rubikTile + spacing * 2, spacing);
+
+        colorchoice("X", space);
+        space.fillRect(rubikview, 2 * cubeTile + 2 * spacing, rubikTile + spacing * 2, spacing);
+
+        colorchoice("X", space);
+        space.fillRect(rubikview, cubeTile + spacing, rubikTile + spacing * 2, spacing);
+
+        colorchoice("X", space);
+        space.fillRect(rubikview, spacing, spacing, rubikTile);
+        colorchoice(colorR1, tile1);
+        tile1.fillRect(rubikview + spacing, spacing, cubeTile, cubeTile);
+        colorchoice("X", space);
+        space.fillRect(rubikview + spacing + cubeTile, spacing, spacing, rubikTile);
+        colorchoice(colorR2, tile2);
+        tile2.fillRect(rubikview + cubeTile + spacing * 2, spacing, cubeTile, cubeTile);
+        colorchoice("X", space);
+        space.fillRect(rubikview + 2 * spacing + (2 * cubeTile), spacing, spacing, rubikTile);
+        colorchoice(colorR3, tile3);
+        tile3.fillRect(rubikview + 3 * spacing + (cubeTile * 2), spacing, cubeTile, cubeTile);
+        colorchoice("X", space);
+        space.fillRect(rubikview + 3 * spacing + cubeTile * 3, spacing, spacing, rubikTile);
+
+        colorchoice(colorR4, tile4);
+        tile4.fillRect(rubikview + spacing, cubeTile + 2 * spacing, cubeTile, cubeTile);
+        colorchoice(colorR5, space);
+        tile5.fillRect(rubikview + cubeTile + spacing * 2, cubeTile + 2 * spacing, cubeTile, cubeTile);
+        colorchoice(colorR6, space);
+        tile6.fillRect(rubikview + 3 * spacing + (cubeTile * 2), cubeTile + 2 * spacing, cubeTile, cubeTile);
+
+        colorchoice(colorR7, tile7);
+        tile4.fillRect(rubikview + spacing, 2 * cubeTile + 3 * spacing, cubeTile, cubeTile);
+        colorchoice(colorR8, tile8);
+        tile5.fillRect(rubikview + cubeTile + spacing * 2, 2 * cubeTile + 3 *
+                spacing, cubeTile, cubeTile);
+        colorchoice(colorR9, tile9);
+        tile6.fillRect(rubikview + 3 * spacing + (cubeTile * 2), 2 * cubeTile + 3 * spacing,
+                cubeTile, cubeTile);
+        title.setColor(Color.WHITE);
+        title.drawString("Front", rubbreak + textalign - 3, 15);
+        title.drawString("Right", 15 + 2 * rubbreak + textalign * 3, 15);
     }
 
     public String grabcubecolor(Graphics2D tile, String[][][] cube, int face, int rows, int cols) {
@@ -225,6 +307,8 @@ public class screen extends JPanel implements Runnable {
             tile.setColor(Color.BLUE);
         } else if (color == "G") {
             tile.setColor(Color.GREEN);
+        } else if (color == "X") {
+            tile.setColor(Color.BLACK);
         } else {
             tile.setColor(Color.PINK);
         }

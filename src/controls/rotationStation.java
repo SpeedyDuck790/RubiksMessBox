@@ -22,7 +22,6 @@ public class rotationStation {
         Gamepad.setVisible(true);
         Gamepad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Gamepad.setResizable(false);
-        Gamepad.setLocationRelativeTo(null);
         Gamepad.setLayout(new FlowLayout());
 
         int buttonSize = 50;
