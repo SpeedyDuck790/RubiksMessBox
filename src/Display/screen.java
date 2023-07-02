@@ -159,13 +159,13 @@ public class screen extends JPanel implements Runnable {
             System.out.println("switched");
             cube = position.switched();
             movestring = "1";
-            movedef = "Cube Skin: Switched";
+            movedef = "CP: Switched";
         }
         if (keyValue.testingRotation == true) {
             System.out.println("TestSkinPressed");
             cube = position.testingRotation();
             movestring = "2";
-            movedef = "Cube Skin: Test Rotation";
+            movedef = "CS: Test Rota";
         }
 
     }
