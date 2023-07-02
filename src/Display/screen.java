@@ -2,7 +2,10 @@ package Display;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import Cube.*;
 import Actions.moves;
@@ -10,6 +13,7 @@ import Actions.output;
 import controls.keyboard;
 
 import java.io.*;
+import java.nio.Buffer;
 import java.util.*;
 
 public class screen extends JPanel implements Runnable {
@@ -28,10 +32,11 @@ public class screen extends JPanel implements Runnable {
     // screen method
     public screen() {
         this.setPreferredSize(new Dimension(screenwidth, screenheight));
-        this.setBackground(new Color(102, 66, 77));
+        this.setBackground(new Color(21, 21, 21));
         this.setDoubleBuffered(true);
         this.addKeyListener(keyValue);
         this.setFocusable(true);
+
     }
 
     // thread
@@ -75,6 +80,8 @@ public class screen extends JPanel implements Runnable {
 
     String[][][] cube = new String[6][3][3];
     int face = 0;
+    String movestring = "?";
+    String movedef = "F to Start";
 
     // update method
     public void update() {
@@ -83,56 +90,82 @@ public class screen extends JPanel implements Runnable {
         moves move = new moves();
         if (keyValue.UPressed == true) {
             System.out.println("UPressed");
+            movestring = "Q";
+            movedef = "Move:U";
         }
         move.U(cube, face);
         if (keyValue.DPressed == true) {
             System.out.println("DPressed");
             move.D(cube, face);
+            movestring = "W";
+            movedef = "Move:D";
         }
         if (keyValue.LPressed == true) {
             System.out.println("LPressed");
             move.L(cube, face);
+            movestring = "E";
+            movedef = "Move:L";
         }
         if (keyValue.RPressed == true) {
             System.out.println("RPressed");
             move.R(cube, face);
+            movestring = "R";
+            movedef = "Move:R";
         }
         if (keyValue.FPressed == true) {
             System.out.println("FPressed");
+            movestring = "S";
+            movedef = "Move:F";
             // move.F(cube, face);
         }
         if (keyValue.BPressed == true) {
             System.out.println("BPressed");
             // move.B(cube, face);
+            movestring = "D";
+            movedef = "Move:B";
         }
         if (keyValue.xPressed == true) {
             System.out.println("xPressed");
             // move.x(cube, face);
+            movestring = "T";
+            movedef = "Move:x";
         }
         if (keyValue.yPressed == true) {
             System.out.println("yPressed");
             // move.y(cube, face);
+            movestring = "G";
+            movedef = "Move:y";
         }
         if (keyValue.zPressed == true) {
             System.out.println("zPressed");
             // move.z(cube, face);
+            movestring = "B";
+            movedef = "Move:z";
         }
         if (keyValue.resetPressed == true) {
             System.out.println("resetPressed");
             cube = position.Default();
+            movestring = "F";
+            movedef = "-READY-";
         }
         if (keyValue.newfacepressed == true) {
             System.out.println("newfacepressed");
             setface();
             output.ShowSide(face);
+            movestring = "A";
+            movedef = "Rotated";
         }
         if (keyValue.switched == true) {
             System.out.println("switched");
             cube = position.switched();
+            movestring = "1";
+            movedef = "Cube Skin: Switched";
         }
         if (keyValue.testingRotation == true) {
             System.out.println("TestSkinPressed");
             cube = position.testingRotation();
+            movestring = "2";
+            movedef = "Cube Skin: Test Rotation";
         }
 
     }
@@ -174,6 +207,9 @@ public class screen extends JPanel implements Runnable {
         Graphics2D tile9 = (Graphics2D) g;
         Graphics2D space = (Graphics2D) g;
         Graphics2D title = (Graphics2D) g;
+        Graphics2D button = (Graphics2D) g;
+        Graphics2D bpanel = (Graphics2D) g;
+        Graphics2D logo = (Graphics2D) g;
 
         String colour1 = grabcubecolor(tile1, cube, face, 0, 0);
         String colour2 = grabcubecolor(tile2, cube, face, 0, 1);
@@ -516,7 +552,7 @@ public class screen extends JPanel implements Runnable {
         tile9.fillRect(rubikview + 3 * spacing + (cubeTile * 2), 2 * cubeTile + 3 * spacing + margin,
                 cubeTile, cubeTile);
         // -----------------------------------------------------------------------------------------------------------
-        title.setColor(new Color(0, 0, 0));
+        title.setColor(new Color(145, 49, 117));
         title.setFont(new Font("TimesRoman", Font.BOLD, 20));
         title.drawString("Left", textalign - 50, 250 + topspace + 18);
         title.drawString("Front", 3 * textalign - 90, 250 + topspace + 18);
@@ -525,7 +561,19 @@ public class screen extends JPanel implements Runnable {
         title.drawString("Top", 3 * textalign - 80, topspace / 2 + 15);
         title.drawString("Bottom", 3 * textalign - 100, 520 + topspace + 18);
         // -------------------------------------------------------------------------------------------------------
+        bpanel.setColor(new Color(60, 65, 92));
+        bpanel.fillRect(600, 700, 200, 100);
+        button.setColor(new Color(180, 165, 165));
+        button.fill3DRect(665, 715, cubeTile, cubeTile, getFocusTraversalKeysEnabled());
+        title.setColor(new Color(145, 49, 117));
+        title.setFont(new Font("TimesRoman", Font.BOLD, 20));
+        title.drawString(movedef, 660, 680);
+        title.setColor(getBackground());
+        title.drawString(movestring, 695, 757);
 
+        // -------------------------------------------------------------------------------------------------------
+        ImageObserver obs = null;
+        // logo.drawImage(logo, 0, 0, obs);
     }
 
     public String grabcubecolor(Graphics2D tile, String[][][] cube, int face, int rows, int cols) {
@@ -550,6 +598,8 @@ public class screen extends JPanel implements Runnable {
         } else if (color == "G") {
             tile.setColor(Color.GREEN);
         } else if (color == "X") {
+            tile.setColor(new Color(69, 69, 69));
+        } else if (color == "BB") {
             tile.setColor(Color.BLACK);
         } else {
 
@@ -567,6 +617,7 @@ public class screen extends JPanel implements Runnable {
                 tile.setColor(new Color(0, 150, 255));
             }
             if (i == 4) {
+                tile.setColor(new Color(50, 255, 255));
                 i = 0;
             }
 
