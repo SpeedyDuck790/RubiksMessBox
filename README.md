@@ -41,7 +41,7 @@ _________________________________
   B = z
   Shift+ = *'
   A = face rotation -(front>back>left>right>top>bottom>loop)
-  R = Reset to default
+  F = Reset to default
   ___________________________________________________________
   Controller- should appear on startup *to be completed
   ___________________________________________________________
