@@ -90,10 +90,10 @@ public class screen extends JPanel implements Runnable {
         moves move = new moves();
         if (keyValue.UPressed == true) {
             System.out.println("UPressed");
+            move.U(cube, face);
             movestring = "Q";
             movedef = "Move:U";
         }
-        move.U(cube, face);
         if (keyValue.DPressed == true) {
             System.out.println("DPressed");
             move.D(cube, face);
@@ -116,11 +116,11 @@ public class screen extends JPanel implements Runnable {
             System.out.println("FPressed");
             movestring = "S";
             movedef = "Move:F";
-            // move.F(cube, face);
+            move.F(cube, face);
         }
         if (keyValue.BPressed == true) {
             System.out.println("BPressed");
-            // move.B(cube, face);
+            move.B(cube, face);
             movestring = "D";
             movedef = "Move:B";
         }
@@ -138,7 +138,7 @@ public class screen extends JPanel implements Runnable {
         }
         if (keyValue.zPressed == true) {
             System.out.println("zPressed");
-            // move.z(cube, face);
+            move.z(cube, face);
             movestring = "B";
             movedef = "Move:z";
         }
@@ -166,6 +166,13 @@ public class screen extends JPanel implements Runnable {
             cube = position.testingRotation();
             movestring = "2";
             movedef = "CS: Test Rota";
+        }
+
+        if (keyValue.testingFanB == true) {
+            System.out.println("TestSkinPressed");
+            cube = position.testingFanB();
+            movestring = "3";
+            movedef = "CS: Test F,B";
         }
 
     }

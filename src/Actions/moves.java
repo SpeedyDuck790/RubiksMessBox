@@ -726,7 +726,80 @@ public class moves {
     }
 
     public String[][][] F(String[][][] cube, int side) {
-        return cube;
+        int NsideF = 0;
+        int NsideB = 0;
+        int NsideS = 0;
+        int NsideT = 0;
+        int NsideU = 0;
+
+        if (side == 0) {
+            NsideF = 3;
+            NsideB = 2;
+            NsideS = 0;
+            NsideT = 4;
+            NsideU = 5;
+        }
+
+        String[][][] ReplacingCube = cube;
+        // faces
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3, s1, s2, s3, s4, s5, s6, s7, s8;
+
+        a3 = cube[NsideB][0][2];
+        b3 = cube[NsideB][1][2];
+        c3 = cube[NsideB][2][2];
+
+        a2 = cube[NsideT][2][0];
+        b2 = cube[NsideT][2][1];
+        c2 = cube[NsideT][2][2];
+
+        a1 = cube[NsideF][0][0];
+        b1 = cube[NsideF][1][0];
+        c1 = cube[NsideF][2][0];
+
+        a = cube[NsideU][0][0];
+        b = cube[NsideU][0][1];
+        c = cube[NsideU][0][2];
+
+        s1 = cube[NsideS][2][2];// right
+        s2 = cube[NsideS][1][2];
+        s3 = cube[NsideS][0][2];
+
+        s4 = cube[NsideS][0][1];// top middle
+        s5 = cube[NsideS][2][1];// bottom middle
+
+        s6 = cube[NsideS][2][0];// left
+        s7 = cube[NsideS][1][0];
+        s8 = cube[NsideS][0][0];
+
+        ReplacingCube[NsideT][2][0] = a3;
+        ReplacingCube[NsideT][2][1] = b3;
+        ReplacingCube[NsideT][2][2] = c3;
+
+        ReplacingCube[NsideF][0][0] = a2;
+        ReplacingCube[NsideF][1][0] = b2;
+        ReplacingCube[NsideF][2][0] = c2;
+
+        ReplacingCube[NsideU][0][0] = a1;
+        ReplacingCube[NsideU][0][1] = b1;
+        ReplacingCube[NsideU][0][2] = c1;
+
+        ReplacingCube[NsideB][0][2] = a;
+        ReplacingCube[NsideB][1][2] = b;
+        ReplacingCube[NsideB][2][2] = c;
+
+        // side
+        ReplacingCube[NsideS][0][0] = s6;// Top left
+        ReplacingCube[NsideS][0][1] = s7;// top middle
+        ReplacingCube[NsideS][0][2] = s8;// top right
+
+        ReplacingCube[NsideS][2][0] = s1;// bottom left
+        ReplacingCube[NsideS][2][1] = s2;// bottom middle
+        ReplacingCube[NsideS][2][2] = s3;// bottom right
+
+        ReplacingCube[NsideS][1][0] = s5;// left middle
+        ReplacingCube[NsideS][1][2] = s4;// right middle
+
+        return ReplacingCube;
     }
 
     public String[][][] Fr(String[][][] cube, int side) {

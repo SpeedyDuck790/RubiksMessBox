@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 
 public class keyboard implements KeyListener {
     public boolean UPressed, DPressed, LPressed, RPressed, FPressed, BPressed, xPressed, yPressed, zPressed,
-            resetPressed, newfacepressed, switched, testingRotation;
+            resetPressed, newfacepressed, switched, testingRotation, testingFanB;
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -59,6 +59,9 @@ public class keyboard implements KeyListener {
         if (key == KeyEvent.VK_2) {// switched
             testingRotation = true;
         }
+        if (key == KeyEvent.VK_3) {// switched
+            testingFanB = true;
+        }
     }
 
     @Override
@@ -104,6 +107,9 @@ public class keyboard implements KeyListener {
         }
         if (key == KeyEvent.VK_2) {// switched
             testingRotation = false;
+        }
+        if (key == KeyEvent.VK_3) {// switched
+            testingFanB = false;
         }
 
     }

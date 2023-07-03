@@ -116,4 +116,41 @@ public class positionSetting {
                 return testingRotation;
 
         }
+
+        public String[][][] testingFanB() {
+                String[][][] testingRotation = {
+                                {
+                                                { "X", "W", "X" },
+                                                { "O", "G", "R" },
+                                                { "X", "Y", "X" },
+                                },
+                                {
+                                                { "B", "B", "B" },
+                                                { "B", "B", "B" },
+                                                { "B", "B", "B" },
+                                },
+                                {
+                                                { "R", "X", "R" },
+                                                { "O", "O", "O" },
+                                                { "B", "X", "B" },
+                                },
+                                {
+                                                { "R", "X", "R" },
+                                                { "R", "R", "R" },
+                                                { "B", "X", "B" },
+                                },
+                                {
+                                                { "R", "W", "B" },
+                                                { "X", "W", "X" },
+                                                { "R", "W", "B" },
+                                },
+                                {
+                                                { "R", "Y", "B" },
+                                                { "X", "Y", "X" },
+                                                { "R", "Y", "B" },
+                                },
+                };
+                return testingRotation;
+
+        }
 }
