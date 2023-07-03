@@ -16,24 +16,209 @@ package Actions;
 public class moves {
 
     public String[][][] U(String[][][] cube, int side) {
-        int newside = 0;
+        int NsideF = 0;
+        int NsideL = 0;
+        int NsideR = 0;
+        int NsideB = 0;
 
-        return cube;
+        if (side == 0) {
+            NsideF = 0;
+            NsideB = 1;
+            NsideL = 2;
+            NsideR = 3;
+        }
+
+        String[][][] ReplacingCube = cube;
+        // faces
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
+
+        a3 = cube[NsideB][0][0];
+        b3 = cube[NsideB][0][1];
+        c3 = cube[NsideB][0][2];
+
+        a2 = cube[NsideL][0][0];
+        b2 = cube[NsideL][0][1];
+        c2 = cube[NsideL][0][2];
+
+        a1 = cube[NsideF][0][0];
+        b1 = cube[NsideF][0][1];
+        c1 = cube[NsideF][0][2];
+
+        a = cube[NsideR][0][0];
+        b = cube[NsideR][0][1];
+        c = cube[NsideR][0][2];
+
+        ReplacingCube[NsideR][0][0] = a3;
+        ReplacingCube[NsideR][0][1] = b3;
+        ReplacingCube[NsideR][0][2] = c3;
+
+        ReplacingCube[NsideF][0][0] = a;
+        ReplacingCube[NsideF][0][1] = b;
+        ReplacingCube[NsideF][0][2] = c;
+
+        ReplacingCube[NsideL][0][0] = a1;
+        ReplacingCube[NsideL][0][1] = b1;
+        ReplacingCube[NsideL][0][2] = c1;
+
+        ReplacingCube[NsideB][0][0] = a2;
+        ReplacingCube[NsideB][0][1] = b2;
+        ReplacingCube[NsideB][0][2] = c2;
+        return ReplacingCube;
 
     }
 
     public String[][][] Ur(String[][][] cube, int side) {
-        return cube;
+        int NsideF = 0;
+        int NsideL = 0;
+        int NsideR = 0;
+        int NsideB = 0;
 
+        if (side == 0) {
+            NsideF = 0;
+            NsideB = 1;
+            NsideL = 2;
+            NsideR = 3;
+        }
+
+        String[][][] ReplacingCube = cube;
+        // faces
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
+
+        a3 = cube[NsideF][0][0];
+        b3 = cube[NsideF][0][1];
+        c3 = cube[NsideF][0][2];
+
+        a2 = cube[NsideR][0][0];
+        b2 = cube[NsideR][0][1];
+        c2 = cube[NsideR][0][2];
+
+        a1 = cube[NsideB][0][0];
+        b1 = cube[NsideB][0][1];
+        c1 = cube[NsideB][0][2];
+
+        a = cube[NsideL][0][0];
+        b = cube[NsideL][0][1];
+        c = cube[NsideL][0][2];
+
+        ReplacingCube[NsideR][0][0] = a3;
+        ReplacingCube[NsideR][0][1] = b3;
+        ReplacingCube[NsideR][0][2] = c3;
+
+        ReplacingCube[NsideF][0][0] = a;
+        ReplacingCube[NsideF][0][1] = b;
+        ReplacingCube[NsideF][0][2] = c;
+
+        ReplacingCube[NsideL][0][0] = a1;
+        ReplacingCube[NsideL][0][1] = b1;
+        ReplacingCube[NsideL][0][2] = c1;
+
+        ReplacingCube[NsideB][0][0] = a2;
+        ReplacingCube[NsideB][0][1] = b2;
+        ReplacingCube[NsideB][0][2] = c2;
+        return ReplacingCube;
     }
 
     public String[][][] D(String[][][] cube, int side) {
-        return cube;
+        int NsideF = 0;
+        int NsideL = 0;
+        int NsideR = 0;
+        int NsideB = 0;
+
+        if (side == 0) {
+            NsideF = 0;
+            NsideB = 1;
+            NsideL = 2;
+            NsideR = 3;
+        }
+
+        String[][][] ReplacingCube = cube;
+        // faces
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
+
+        a3 = cube[NsideF][2][0];
+        b3 = cube[NsideF][2][1];
+        c3 = cube[NsideF][2][2];
+
+        a2 = cube[NsideR][2][0];
+        b2 = cube[NsideR][2][1];
+        c2 = cube[NsideR][2][2];
+
+        a1 = cube[NsideB][2][0];
+        b1 = cube[NsideB][2][1];
+        c1 = cube[NsideB][2][2];
+
+        a = cube[NsideL][2][0];
+        b = cube[NsideL][2][1];
+        c = cube[NsideL][2][2];
+
+        ReplacingCube[NsideR][2][0] = a3;
+        ReplacingCube[NsideR][2][1] = b3;
+        ReplacingCube[NsideR][2][2] = c3;
+
+        ReplacingCube[NsideF][2][0] = a;
+        ReplacingCube[NsideF][2][1] = b;
+        ReplacingCube[NsideF][2][2] = c;
+
+        ReplacingCube[NsideL][2][0] = a1;
+        ReplacingCube[NsideL][2][1] = b1;
+        ReplacingCube[NsideL][2][2] = c1;
+
+        ReplacingCube[NsideB][2][0] = a2;
+        ReplacingCube[NsideB][2][1] = b2;
+        ReplacingCube[NsideB][2][2] = c2;
+        return ReplacingCube;
 
     }
 
     public String[][][] Dr(String[][][] cube, int side) {
-        return cube;
+        int NsideF = 0;
+        int NsideL = 0;
+        int NsideR = 0;
+        int NsideB = 0;
+
+        if (side == 0) {
+            NsideF = 0;
+            NsideB = 1;
+            NsideL = 2;
+            NsideR = 3;
+        }
+
+        String[][][] ReplacingCube = cube;
+        // faces
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
+
+        a3 = cube[NsideF][2][0];
+        b3 = cube[NsideF][2][1];
+        c3 = cube[NsideF][2][2];
+
+        a2 = cube[NsideR][2][0];
+        b2 = cube[NsideR][2][1];
+        c2 = cube[NsideR][2][2];
+
+        a1 = cube[NsideB][2][0];
+        b1 = cube[NsideB][2][1];
+        c1 = cube[NsideB][2][2];
+
+        a = cube[NsideL][2][0];
+        b = cube[NsideL][2][1];
+        c = cube[NsideL][2][2];
+
+        ReplacingCube[NsideL][2][0] = a3;
+        ReplacingCube[NsideL][2][1] = b3;
+        ReplacingCube[NsideL][2][2] = c3;
+
+        ReplacingCube[NsideB][2][0] = a;
+        ReplacingCube[NsideB][2][1] = b;
+        ReplacingCube[NsideB][2][2] = c;
+
+        ReplacingCube[NsideR][2][0] = a1;
+        ReplacingCube[NsideR][2][1] = b1;
+        ReplacingCube[NsideR][2][2] = c1;
+
+        ReplacingCube[NsideF][2][0] = a2;
+        ReplacingCube[NsideF][2][1] = b2;
+        ReplacingCube[NsideF][2][2] = c2;
+        return ReplacingCube;
 
     }
 
@@ -480,8 +665,79 @@ public class moves {
     }
 
     public String[][][] yr(String[][][] cube, int side) {
-        return cube;
+        int NsideF = 0;
+        int NsideL = 0;
+        int NsideR = 0;
+        int NsideB = 0;
+
+        if (side == 0) {
+            NsideF = 0;
+            NsideB = 1;
+            NsideL = 2;
+            NsideR = 3;
+        }
+
+        String[][][] ReplacingCube = cube;
+        // faces
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
+
+        a3 = cube[NsideF][1][0];
+        b3 = cube[NsideF][1][1];
+        c3 = cube[NsideF][1][2];
+
+        a2 = cube[NsideL][1][0];
+        b2 = cube[NsideL][1][1];
+        c2 = cube[NsideL][1][2];
+
+        a1 = cube[NsideB][1][0];
+        b1 = cube[NsideB][1][1];
+        c1 = cube[NsideB][1][2];
+
+        a = cube[NsideR][1][0];
+        b = cube[NsideR][1][1];
+        c = cube[NsideR][1][2];
+
+        ReplacingCube[NsideR][1][0] = a3;
+        ReplacingCube[NsideR][1][1] = b3;
+        ReplacingCube[NsideR][1][2] = c3;
+
+        ReplacingCube[NsideF][1][0] = a;
+        ReplacingCube[NsideF][1][1] = b;
+        ReplacingCube[NsideF][1][2] = c;
+
+        ReplacingCube[NsideL][1][0] = a1;
+        ReplacingCube[NsideL][1][1] = b1;
+        ReplacingCube[NsideL][1][2] = c1;
+
+        ReplacingCube[NsideB][1][0] = a2;
+        ReplacingCube[NsideB][1][1] = b2;
+        ReplacingCube[NsideB][1][2] = c2;
+        return ReplacingCube;
     }
 
     // non priority (*) will be done later
+
+    public String[][][] z(String[][][] cube, int side) {
+        return cube;
+    }
+
+    public String[][][] zr(String[][][] cube, int side) {
+        return cube;
+    }
+
+    public String[][][] F(String[][][] cube, int side) {
+        return cube;
+    }
+
+    public String[][][] Fr(String[][][] cube, int side) {
+        return cube;
+    }
+
+    public String[][][] B(String[][][] cube, int side) {
+        return cube;
+    }
+
+    public String[][][] Br(String[][][] cube, int side) {
+        return cube;
+    }
 }
