@@ -40,9 +40,9 @@ _________________________________
   R = R
   S = F
   D = B
-  T = x
-  F = y
-  B = z
+  T = M
+  F = E
+  B = S
   Shift+ = *'
   A = face rotation -(front>back>left>right>top>bottom>loop)
   F = Reset to default
