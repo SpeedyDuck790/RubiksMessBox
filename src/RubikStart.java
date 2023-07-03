@@ -9,10 +9,43 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
+
 import controls.*;
 
 class RubikStart {
+    public static void sleepy() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
+
+        System.out.println("Hello im RubikMessBox!");
+        sleepy();
+        System.out.println("I am a Rubik's Cube simulator!");
+        System.out.println("I am made by James lee Hill!");
+        sleepy();
+        System.out.println("Its still in Development demo");
+        sleepy();
+        System.out.println("Please enjoy!");
+        sleepy();
+        System.out.println("------------------------");
+        System.out.println("|       |///////|      |");
+        System.out.println("|       |///////|      |");
+        System.out.println("|       |///////|      |");
+        System.out.println("|///////|///////|//////|");
+        System.out.println("|///////|/|RMB|/|//////|");
+        System.out.println("|///////|///////|//////|");
+        System.out.println("|       |///////|      |");
+        System.out.println("|       |///////|      |");
+        System.out.println("|       |///////|      |");
+        System.out.println("------------------------");
+        sleepy();
 
         // JFrame
 
@@ -42,9 +75,6 @@ class RubikStart {
         controller.createStation();
 
         // ===========================================================================
-
-        System.out.println("Hello im RubikMessBox!");
-        System.out.println("I am a Rubik's Cube simulator!");
 
         // Define the desired width and height of the resized image
         int desiredWidth = 300;

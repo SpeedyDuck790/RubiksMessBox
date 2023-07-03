@@ -239,6 +239,16 @@ public class screen extends JPanel implements Runnable {
 
     }
 
+    int Fpscurrent = 0;
+
+    public void frames() {
+        if (Fpscurrent == 60) {
+            Fpscurrent = 0;
+        }
+        Fpscurrent = Fpscurrent + 1;
+
+    }
+
     // update method
     public void paintComponent(Graphics g) {
 
@@ -318,7 +328,14 @@ public class screen extends JPanel implements Runnable {
         String colorB8 = grabcubecolor(tile8, cube, 1, 2, 1);
         String colorB9 = grabcubecolor(tile9, cube, 1, 2, 2);
 
-        System.out.println(colour1 + colour2 + color3 + color4 + color5 + color6 + color7 + color8 + color9);
+        frames();
+
+        System.out.println("Frame processed " + Fpscurrent);
+
+        System.out.println("CF:contents check processed:S" + face);
+        System.out.println("++++++++++++++++++++++++++++++\n()" + colour1 + colour2 + color3 + "()\n()" + color4
+                + color5 + color6
+                + "()\n()" + color7 + color8 + color9 + "()\n++++++++++++++++++++++++++++++");
 
         int rubbreak = 5;
         int spacing = cubeTile / 7;
