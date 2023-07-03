@@ -20,6 +20,6 @@ z=B
 
 
 
-A=face change cycle <front left back right top bottom front>
+A=face change cycle <front left back right top bottom front>**Disabled**
 F=Reset cube
 (*) = not needed due to perspective

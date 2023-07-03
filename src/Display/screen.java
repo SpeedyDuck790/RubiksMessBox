@@ -150,7 +150,7 @@ public class screen extends JPanel implements Runnable {
         }
         if (keyValue.newfacepressed == true) {
             System.out.println("newfacepressed");
-            setface();
+            // setface();
             output.ShowSide(face);
             movestring = "A";
             movedef = "Rotated";

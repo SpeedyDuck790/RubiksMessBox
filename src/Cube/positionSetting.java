@@ -94,8 +94,8 @@ public class positionSetting {
                                 },
                                 {
                                                 { "X", "W", "X" },
-                                                { "Y", "O", "G" },
-                                                { "X", "R", "X" },
+                                                { "B", "O", "G" },
+                                                { "X", "Y", "X" },
                                 },
                                 {
                                                 { "X", "W", "X" },

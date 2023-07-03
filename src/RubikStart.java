@@ -25,7 +25,7 @@ class RubikStart {
         BufferedImage logo = null;
         try {
             logo = ImageIO.read(new File(
-                    "C:\\Users\\James\\OneDrive\\Desktop\\Coding Folder\\RubricMessBox\\src\\res\\logo.png"));
+                    "C:\\Users\\James\\OneDrive\\Desktop\\Coding Folder\\RubikMessBox\\src\\res\\logo.png"));
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
