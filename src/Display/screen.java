@@ -193,6 +193,9 @@ public class screen extends JPanel implements Runnable {
             ClearLog();
             cubeSkin = "Test F an B";
         }
+        if (keyValue.Alt == true) {
+            System.out.println("Shift");
+        }
 
     }
 
