@@ -511,7 +511,7 @@ public class moves {
         return ReplacingCube;
     }
 
-    public String[][][] x(String[][][] cube, int side) {// M
+    public String[][][] M(String[][][] cube, int side) {// M
         int NsideF = 0;
         int NsideB = 0;
         int NsideT = 0;
@@ -562,7 +562,7 @@ public class moves {
         return ReplacingCube;
     }
 
-    public String[][][] xr(String[][][] cube, int side) {
+    public String[][][] Mr(String[][][] cube, int side) {
         int NsideF = 0;
         int NsideB = 0;
         int NsideT = 0;
@@ -613,7 +613,7 @@ public class moves {
         return ReplacingCube;
     }
 
-    public String[][][] y(String[][][] cube, int side) {// E
+    public String[][][] E(String[][][] cube, int side) {// E
         int NsideF = 0;
         int NsideL = 0;
         int NsideR = 0;
@@ -664,7 +664,7 @@ public class moves {
         return ReplacingCube;
     }
 
-    public String[][][] yr(String[][][] cube, int side) {
+    public String[][][] Er(String[][][] cube, int side) {
         int NsideF = 0;
         int NsideL = 0;
         int NsideR = 0;
@@ -715,7 +715,7 @@ public class moves {
         return ReplacingCube;
     }
 
-    public String[][][] z(String[][][] cube, int side) {// s
+    public String[][][] S(String[][][] cube, int side) {// s
         int NsideF = 0;
         int NsideB = 0;
         int NsideT = 0;
@@ -766,7 +766,7 @@ public class moves {
         return ReplacingCube;
     }
 
-    public String[][][] zr(String[][][] cube, int side) {
+    public String[][][] Sr(String[][][] cube, int side) {
         int NsideF = 0;
         int NsideB = 0;
 

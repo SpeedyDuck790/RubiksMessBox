@@ -126,21 +126,21 @@ public class screen extends JPanel implements Runnable {
         }
         if (keyValue.xPressed == true) {
             System.out.println("xPressed");
-            move.x(cube, face);
+            move.M(cube, face);
             movestring = "T";
-            movedef = "Move:x";
+            movedef = "Move:M";
         }
         if (keyValue.yPressed == true) {
             System.out.println("yPressed");
-            move.y(cube, face);
+            move.E(cube, face);
             movestring = "G";
-            movedef = "Move:y";
+            movedef = "Move:E";
         }
         if (keyValue.zPressed == true) {
             System.out.println("zPressed");
-            move.z(cube, face);
+            move.S(cube, face);
             movestring = "B";
-            movedef = "Move:z";
+            movedef = "Move:S";
         }
         if (keyValue.resetPressed == true) {
             System.out.println("resetPressed");
