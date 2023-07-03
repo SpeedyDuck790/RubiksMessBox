@@ -9,6 +9,8 @@ public class keyboard implements KeyListener {
     public boolean UPressed, DPressed, LPressed, RPressed, FPressed, BPressed, xPressed, yPressed, zPressed,
             resetPressed, newfacepressed, switched, testingRotation, testingFanB, Alt;
 
+    public boolean UPressed2, DPressed2, LPressed2, RPressed2, FPressed2, BPressed2, xPressed2, yPressed2, zPressed2;;
+
     @Override
     public void keyTyped(KeyEvent e) {
 
@@ -25,22 +27,51 @@ public class keyboard implements KeyListener {
 
         if (key == KeyEvent.VK_Q) {// U
             UPressed = true;
+            if (Alt) {
+                UPressed2 = true;
+            } else {
+                UPressed = true;
+            }
         }
+
         if (key == KeyEvent.VK_W) {// D
-            DPressed = true;
+            if (Alt) {
+                DPressed2 = true;
+            } else {
+                DPressed = true;
+            }
         }
+
         if (key == KeyEvent.VK_E) {// L
-            LPressed = true;
+            if (Alt) {
+                LPressed2 = true;
+            } else {
+                LPressed = true;
+            }
         }
+
         if (key == KeyEvent.VK_R) {// R
-            RPressed = true;
+            if (Alt) {
+                RPressed2 = true;
+            } else {
+                RPressed = true;
+            }
         }
         if (key == KeyEvent.VK_S) {// F
-            FPressed = true;
+            if (Alt) {
+                FPressed2 = true;
+            } else {
+                FPressed = true;
+            }
         }
         if (key == KeyEvent.VK_D) {// B
-            BPressed = true;
+            if (Alt) {
+                BPressed2 = true;
+            } else {
+                BPressed = true;
+            }
         }
+
         if (key == KeyEvent.VK_A) {// newface
             newfacepressed = true;
         }
@@ -49,13 +80,25 @@ public class keyboard implements KeyListener {
             resetPressed = true;
         }
         if (key == KeyEvent.VK_T) {// x
-            xPressed = true;
+            if (Alt) {
+                xPressed2 = true;
+            } else {
+                xPressed = true;
+            }
         }
         if (key == KeyEvent.VK_G) {// y
-            yPressed = true;
+            if (Alt) {
+                yPressed2 = true;
+            } else {
+                yPressed = true;
+            }
         }
         if (key == KeyEvent.VK_B) {// z
-            zPressed = true;
+            if (Alt) {
+                zPressed2 = true;
+            } else {
+                zPressed = true;
+            }
         }
         if (key == KeyEvent.VK_1) {// switched
             switched = true;
@@ -78,24 +121,32 @@ public class keyboard implements KeyListener {
 
         if (key == KeyEvent.VK_Q) {// U
             UPressed = false;
+            UPressed2 = false;
         }
         if (key == KeyEvent.VK_W) {// D
             DPressed = false;
+            DPressed2 = false;
         }
         if (key == KeyEvent.VK_E) {// L
             LPressed = false;
+            LPressed2 = false;
         }
         if (key == KeyEvent.VK_R) {// R
             RPressed = false;
+            RPressed2 = false;
         }
         if (key == KeyEvent.VK_S) {// F
             FPressed = false;
+            FPressed2 = false;
+
         }
         if (key == KeyEvent.VK_D) {// B
             BPressed = false;
+            BPressed2 = false;
         }
         if (key == KeyEvent.VK_A) {// newface
             newfacepressed = false;
+
         }
 
         if (key == KeyEvent.VK_F) {// reset
@@ -103,12 +154,15 @@ public class keyboard implements KeyListener {
         }
         if (key == KeyEvent.VK_T) {// x
             xPressed = false;
+            xPressed2 = false;
         }
         if (key == KeyEvent.VK_G) {// y
             yPressed = false;
+            yPressed2 = false;
         }
         if (key == KeyEvent.VK_B) {// z
             zPressed = false;
+            zPressed2 = false;
         }
         if (key == KeyEvent.VK_1) {// switched
             switched = false;

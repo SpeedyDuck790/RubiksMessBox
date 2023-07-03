@@ -90,7 +90,7 @@ public class screen extends JPanel implements Runnable {
         positionSetting position = new positionSetting();
         output output = new output();
         moves move = new moves();
-        if (keyValue.UPressed == true) {
+        if (keyValue.UPressed == true && keyValue.Alt == false) {
             System.out.println("UPressed");
             move.U(cube, face);
             movestring = "Q";
@@ -196,7 +196,73 @@ public class screen extends JPanel implements Runnable {
         if (keyValue.Alt == true) {
             System.out.println("Shift");
         }
-
+        if (keyValue.UPressed2 == true) {
+            System.out.println("U'Pressed");
+        }
+        // _______________________________________________________________________________________________________
+        if (keyValue.UPressed2 == true) {
+            System.out.println("UPressed");
+            move.Ur(cube, face);
+            movestring = "shift+Q";
+            movedef = "Move:U'";
+            Log("U',");
+        }
+        if (keyValue.DPressed2 == true) {
+            System.out.println("DPressed");
+            move.Dr(cube, face);
+            movestring = "shift+W";
+            movedef = "Move:D'";
+            Log("D',");
+        }
+        if (keyValue.LPressed2 == true) {
+            System.out.println("LPressed");
+            move.Lr(cube, face);
+            movestring = "shift+E";
+            movedef = "Move:L'";
+            Log("L',");
+        }
+        if (keyValue.RPressed2 == true) {
+            System.out.println("RPressed");
+            move.Rr(cube, face);
+            movestring = "shift+R";
+            movedef = "Move:R'";
+            Log("R',");
+        }
+        if (keyValue.FPressed2 == true) {
+            System.out.println("FPressed");
+            movestring = "shift+S";
+            movedef = "Move:F'";
+            move.Fr(cube, face);
+            Log("F',");
+        }
+        if (keyValue.BPressed2 == true) {
+            System.out.println("BPressed");
+            move.Br(cube, face);
+            movestring = "shift+D";
+            movedef = "Move:B'";
+            Log("B',");
+        }
+        if (keyValue.xPressed2 == true) {
+            System.out.println("xPressed");
+            move.Mr(cube, face);
+            movestring = "shift+T";
+            movedef = "Move:M'";
+            Log("M',");
+        }
+        if (keyValue.yPressed2 == true) {
+            System.out.println("yPressed");
+            move.Er(cube, face);
+            movestring = "shift+G";
+            movedef = "Move:E'";
+            Log("E',");
+        }
+        if (keyValue.zPressed2 == true) {
+            System.out.println("zPressed");
+            move.Sr(cube, face);
+            movestring = "shift+B";
+            movedef = "Move:S'";
+            Log("S',");
+        }
     }
 
     String secondline = "";
