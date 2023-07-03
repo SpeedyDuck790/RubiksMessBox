@@ -20,16 +20,20 @@ __________________________________
     ├───Cube
     │       positionSetting.java
     │
-    └───Display
-            screen.java
+    ├───Display
+    │       screen.java
+    │
+    └───res
+            cubetest.png
+            logo.png
 </pre>
 _________________________________
 ## INSTRUCTIONS:<be>
 <pre>
   Keyboard Support__________________________________________
-  Q W E R T
-  A S D F G
-          B
+           Q W E R T
+     Shift A S D F G
+                   B
   Q = U
   W = D
   E = L
