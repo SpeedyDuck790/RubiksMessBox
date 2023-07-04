@@ -79,7 +79,7 @@ public class screen extends JPanel implements Runnable {
     }
 
     String[][][] cube = new String[6][3][3];
-    int face = 0;
+    static int face = 0;
     String movestring = "?";
     String movedef = "F to Start";
     String cubeSkin = "Cube Type:null skin (numbers or F)";
@@ -291,7 +291,7 @@ public class screen extends JPanel implements Runnable {
         }
     }
 
-    public int getface() {
+    public static int getface() {
         return face;
     }
 

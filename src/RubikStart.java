@@ -71,6 +71,9 @@ class RubikStart {
 
         game.startGthread();
 
+        notationreader notations = new notationreader();
+        notations.Reader();
+
         rotationStation controller = new rotationStation();
         controller.createStation();
 
