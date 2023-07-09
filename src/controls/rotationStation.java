@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+// import javax.swing.JPanel;
 
 public class rotationStation {
 
@@ -93,7 +93,7 @@ public class rotationStation {
             moves move = new moves();
             positionSetting set = new positionSetting();
             screen cubesim = new screen();
-            int face = cubesim.getface();
+            int face = screen.getface();
             String[][][] cube = cubesim.getcubedata();
             JButton button = (JButton) e.getSource();
             if (button.getText() == "U") {

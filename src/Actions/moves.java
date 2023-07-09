@@ -783,7 +783,7 @@ public class moves {
 
         String[][][] ReplacingCube = cube;
         // faces
-        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3, s1, s2, s3, s4, s5, s6, s7, s8;
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
 
         a3 = cube[NsideB][0][1];
         b3 = cube[NsideB][1][1];

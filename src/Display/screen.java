@@ -1,20 +1,20 @@
 package Display;
 
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
+// import java.awt.event.*;
+// import java.awt.image.BufferedImage;
+// import java.awt.image.ImageObserver;
 
-import javax.imageio.ImageIO;
+// import javax.imageio.ImageIO;
 import javax.swing.*;
 import Cube.*;
 import Actions.moves;
 import Actions.output;
 import controls.keyboard;
 
-import java.io.*;
-import java.nio.Buffer;
-import java.util.*;
+// import java.io.*;
+// import java.nio.Buffer;
+// import java.util.*;
 
 public class screen extends JPanel implements Runnable {
     // cube dimensions
@@ -332,7 +332,7 @@ public class screen extends JPanel implements Runnable {
         Graphics2D title = (Graphics2D) g;
         Graphics2D button = (Graphics2D) g;
         Graphics2D bpanel = (Graphics2D) g;
-        Graphics2D logo = (Graphics2D) g;
+        // Graphics2D logo = (Graphics2D) g;
 
         String colour1 = grabcubecolor(tile1, cube, face, 0, 0);
         String colour2 = grabcubecolor(tile2, cube, face, 0, 1);

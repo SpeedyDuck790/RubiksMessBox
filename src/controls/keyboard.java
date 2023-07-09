@@ -1,7 +1,7 @@
 package controls;
 
-import Actions.*;
-import Display.screen;
+// import Actions.*;
+// import Display.screen;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
