@@ -19,7 +19,7 @@ public class rotationStation {
 
         JFrame Gamepad = new JFrame("Controller Rubiks Cube");
         Gamepad.setSize(250, 200);
-        Gamepad.setVisible(true);
+        Gamepad.setVisible(false);
         Gamepad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Gamepad.setResizable(false);
         Gamepad.setLayout(new FlowLayout());
@@ -93,21 +93,21 @@ public class rotationStation {
             moves move = new moves();
             positionSetting set = new positionSetting();
             screen cubesim = new screen();
-            int face = screen.getface();
-            String[][][] cube = cubesim.getcubedata();
+            // int face = screen.getface();
+            // String[][][] cube = cubesim.getcubedata();
             JButton button = (JButton) e.getSource();
             if (button.getText() == "U") {
                 System.out.println("U");
-                cubesim.setcubedata(move.U(cube, face));
+
             } else if (button.getText() == "D") {
                 System.out.println("D");
-                move.D(cube, face);
+
             } else if (button.getText() == "L") {
                 System.out.println("L");
-                move.L(cube, face);
+
             } else if (button.getText() == "R") {
                 System.out.println("R");
-                cubesim.setcubedata(move.R(cube, face));
+
             } else if (button.getText() == "F") {
                 System.out.println("F");
                 // move.F(cube, face);

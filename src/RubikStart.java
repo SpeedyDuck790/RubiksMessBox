@@ -29,15 +29,15 @@ class RubikStart {
         sleepy();
         System.out.println("Please enjoy!");
         System.out.println("------------------------");
-        System.out.println("|       |///////|      |");
-        System.out.println("|       |///////|      |");
-        System.out.println("|       |///////|      |");
-        System.out.println("|///////|///////|//////|");
-        System.out.println("|///////|/|RMB|/|//////|");
-        System.out.println("|///////|///////|//////|");
-        System.out.println("|       |///////|      |");
-        System.out.println("|       |///////|      |");
-        System.out.println("|       |///////|      |");
+        System.out.println("|       |///////|       |");
+        System.out.println("|       |///////|       |");
+        System.out.println("|       |///////|       |");
+        System.out.println("|///////|///////|///////|");
+        System.out.println("|///////|/|RMB|/|///////|");
+        System.out.println("|///////|///////|///////|");
+        System.out.println("|       |///////|       |");
+        System.out.println("|       |///////|       |");
+        System.out.println("|       |///////|       |");
         System.out.println("------------------------");
 
         // JFrame

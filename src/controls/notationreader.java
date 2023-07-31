@@ -43,7 +43,7 @@ public class notationreader {
         frame.setLocation(1500, 300);
 
         frame.setSize(250, 400);
-        frame.setVisible(true);
+        frame.setVisible(false);
 
     }
 

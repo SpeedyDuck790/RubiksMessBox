@@ -85,6 +85,11 @@ public class screen extends JPanel implements Runnable {
     String cubeSkin = "Cube Type:null skin (numbers or F)";
     String Log = "Cube config:";
 
+    public void MDR() {
+        moves move = new moves();
+        move.D(cube, face);
+    }
+
     // update method
     public void update() {
         positionSetting position = new positionSetting();
