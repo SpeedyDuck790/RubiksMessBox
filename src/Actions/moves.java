@@ -20,17 +20,19 @@ public class moves {
         int NsideL = 0;
         int NsideR = 0;
         int NsideB = 0;
+        int NsideS = 0;
 
         if (side == 0) {
             NsideF = 0;
             NsideB = 1;
+            NsideS = 4;
             NsideL = 2;
             NsideR = 3;
         }
 
         String[][][] ReplacingCube = cube;
         // faces
-        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3, s1, s2, s3, s4, s5, s6, s7, s8;
 
         a3 = cube[NsideB][0][0];
         b3 = cube[NsideB][0][1];
@@ -48,6 +50,17 @@ public class moves {
         b = cube[NsideR][0][1];
         c = cube[NsideR][0][2];
 
+        s1 = cube[NsideS][2][2];// right
+        s2 = cube[NsideS][1][2];
+        s3 = cube[NsideS][0][2];
+
+        s4 = cube[NsideS][0][1];// top middle
+        s5 = cube[NsideS][2][1];// bottom middle
+
+        s6 = cube[NsideS][2][0];// left
+        s7 = cube[NsideS][1][0];
+        s8 = cube[NsideS][0][0];
+
         ReplacingCube[NsideR][0][0] = a3;
         ReplacingCube[NsideR][0][1] = b3;
         ReplacingCube[NsideR][0][2] = c3;
@@ -63,6 +76,17 @@ public class moves {
         ReplacingCube[NsideB][0][0] = a2;
         ReplacingCube[NsideB][0][1] = b2;
         ReplacingCube[NsideB][0][2] = c2;
+
+        ReplacingCube[NsideS][0][0] = s6;// Top left
+        ReplacingCube[NsideS][0][1] = s7;// top middle
+        ReplacingCube[NsideS][0][2] = s8;// top right
+
+        ReplacingCube[NsideS][2][0] = s1;// bottom left
+        ReplacingCube[NsideS][2][1] = s2;// bottom middle
+        ReplacingCube[NsideS][2][2] = s3;// bottom right
+
+        ReplacingCube[NsideS][1][0] = s5;// left middle
+        ReplacingCube[NsideS][1][2] = s4;// right middle
         return ReplacingCube;
 
     }
@@ -123,17 +147,19 @@ public class moves {
         int NsideL = 0;
         int NsideR = 0;
         int NsideB = 0;
+        int NsideS = 0;
 
         if (side == 0) {
             NsideF = 0;
             NsideB = 1;
+            NsideS = 5;
             NsideL = 2;
             NsideR = 3;
         }
 
         String[][][] ReplacingCube = cube;
         // faces
-        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3;
+        String a, b, c, a1, b1, c1, a2, b2, c2, a3, b3, c3, s1, s2, s3, s4, s5, s6, s7, s8;
 
         a3 = cube[NsideF][2][0];
         b3 = cube[NsideF][2][1];
@@ -151,6 +177,17 @@ public class moves {
         b = cube[NsideL][2][1];
         c = cube[NsideL][2][2];
 
+        s1 = cube[NsideS][2][2];// right
+        s2 = cube[NsideS][1][2];
+        s3 = cube[NsideS][0][2];
+
+        s4 = cube[NsideS][0][1];// top middle
+        s5 = cube[NsideS][2][1];// bottom middle
+
+        s6 = cube[NsideS][2][0];// left
+        s7 = cube[NsideS][1][0];
+        s8 = cube[NsideS][0][0];
+
         ReplacingCube[NsideR][2][0] = a3;
         ReplacingCube[NsideR][2][1] = b3;
         ReplacingCube[NsideR][2][2] = c3;
@@ -166,6 +203,18 @@ public class moves {
         ReplacingCube[NsideB][2][0] = a2;
         ReplacingCube[NsideB][2][1] = b2;
         ReplacingCube[NsideB][2][2] = c2;
+
+        ReplacingCube[NsideS][0][0] = s6;// Top left
+        ReplacingCube[NsideS][0][1] = s7;// top middle
+        ReplacingCube[NsideS][0][2] = s8;// top right
+
+        ReplacingCube[NsideS][2][0] = s1;// bottom left
+        ReplacingCube[NsideS][2][1] = s2;// bottom middle
+        ReplacingCube[NsideS][2][2] = s3;// bottom right
+
+        ReplacingCube[NsideS][1][0] = s5;// left middle
+        ReplacingCube[NsideS][1][2] = s4;// right middle
+
         return ReplacingCube;
 
     }

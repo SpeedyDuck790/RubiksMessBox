@@ -23,14 +23,12 @@ class RubikStart {
     public static void main(String[] args) {
 
         System.out.println("Hello im RubikMessBox!");
-        sleepy();
         System.out.println("I am a Rubik's Cube simulator!");
         System.out.println("I am made by James lee Hill!");
         sleepy();
         System.out.println("Its still in Development demo");
         sleepy();
         System.out.println("Please enjoy!");
-        sleepy();
         System.out.println("------------------------");
         System.out.println("|       |///////|      |");
         System.out.println("|       |///////|      |");
@@ -42,7 +40,6 @@ class RubikStart {
         System.out.println("|       |///////|      |");
         System.out.println("|       |///////|      |");
         System.out.println("------------------------");
-        sleepy();
 
         // JFrame
 
