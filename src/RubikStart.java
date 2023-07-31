@@ -15,7 +15,6 @@ class RubikStart {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -54,9 +53,11 @@ class RubikStart {
             logo = ImageIO.read(new File(
                     "C:\\Users\\James\\OneDrive\\Desktop\\Coding Folder\\RubikMessBox\\src\\res\\RMBlogo.png"));
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        ImageIcon img = new ImageIcon(
+                "C:\\Users\\James\\OneDrive\\Desktop\\Coding Folder\\RubikMessBox\\src\\res\\RMBlogo.png");
+        windowFrame.setIconImage(img.getImage());
 
         windowFrame.pack();
 
